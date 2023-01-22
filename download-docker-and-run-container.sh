@@ -4,6 +4,8 @@ write_files:
           permissions: 0744
           owner: root
           content: |
+            #!/usr/bin/bash
+            
             sudo apt-get update
 
             sudo apt-get install \
@@ -32,3 +34,5 @@ write_files:
             sudo docker pull 583715230104.dkr.ecr.us-east-1.amazonaws.com/practice-spanish-buy-flights-docker-image
 
             sudo docker run -d -p 80:80 583715230104.dkr.ecr.us-east-1.amazonaws.com/practice-spanish-buy-flights-docker-image
+runcmd:
+  - sudo bash /home/ubuntu/docker-ubuntu.sh
