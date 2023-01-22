@@ -15,3 +15,5 @@ echo \
 sudo apt-get update
 
 yes | sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+
+yes | sudo yum install git all
