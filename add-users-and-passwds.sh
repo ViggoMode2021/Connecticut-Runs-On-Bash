@@ -21,3 +21,9 @@ Anna
 Hector
 Maria
 '
+
+for i in $( cat users.txt ); do
+    sudo cat /etc/passwd | grep -E '$i' 
+done
+
+#sudo cat /etc/passwd | grep -E 'Bill|Anna'
