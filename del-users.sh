@@ -1,5 +1,7 @@
 #!/bin/bash
-for i in {1..10};
+
+cat del.txt | while read user
 do
-deluser user$i --disabled-password --gecos user$1
+        echo "Deleting: ${user}"
+        userdel -r "${user}"
 done
