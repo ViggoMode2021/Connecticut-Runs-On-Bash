@@ -1,4 +1,4 @@
-#!/usr/local/bin bash
+#!/usr/bin/env bash
 
 while [ true ] ;do
 used=`free -m |awk 'NR==3 {print $4}'`
