@@ -1,9 +1,14 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-url = practicespanishbuyflights.com
+d=$(date +%d-%m-%y)
 
-while ! ping -c1 $url &>/dev/null
-        do echo "Ping Fail - `date`"
-done
-echo "Host Found - `date`"
-
+if ping -c 1 practicespanishbuyflights.com  &> /dev/null
+then
+  echo "Ping successful on $d for practicespanishbuyflights.com - Remember to move scripts if not done already!" >> ping.txt
+  sudo ssmtp ryansviglione@gmail.com < ping.txt
+  echo "Ping worked!"
+else
+  echo "Ping unsuccessful on $Date for practicespanishbuyflights.com - Remember to move scripts if not done already!" >> ping.txt
+  sudo ssmtp ryansviglione@gmail.com < ping.txt
+  echo "Ping unsuccessful. Begin troubleshooting."
+fi
