@@ -34,7 +34,7 @@ Bob
 EOF
 
 for name in $( cat data-analysts.txt ); do
-    sudo useradd $name
+    sudo useradd -m $name
     echo "user $name added successfully!"
     echo $name:$name"123" | chpasswd
     echo "Password for user $i changed successfully"
@@ -43,5 +43,8 @@ done
 sudo groupadd data-analysts
 
 for name in $( cat data-analysts.txt ); do 
-  sudo usermod -a -G data-analysts "$name"; 
+  sudo usermod -a -G data-analysts "$name";
+  echo "User $name added successfully to the group titled Data-Analysts!"
 done
+
+
