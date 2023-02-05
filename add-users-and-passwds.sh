@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/local/bash
 
 sudo cat > users.txt<< EOF
 Bill
