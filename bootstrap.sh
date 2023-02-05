@@ -30,6 +30,9 @@ sudo apt install git
 
 Sleep 5
 
+sudo curl -L "https://github.com/docker/compose/releases/download/1.23.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+
 mkdir docker-database-success-academy
 cd docker-database-success-academy
 
