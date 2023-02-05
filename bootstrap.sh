@@ -46,5 +46,3 @@ for name in $( cat data-analysts.txt ); do
   sudo usermod -a -G data-analysts "$name";
   echo "User $name added successfully to the group titled Data-Analysts!"
 done
-
-
