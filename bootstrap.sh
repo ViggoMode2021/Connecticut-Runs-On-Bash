@@ -46,3 +46,24 @@ for name in $( cat data-analysts.txt ); do
   sudo usermod -a -G data-analysts "$name";
   echo "User $name added successfully to the group titled Data-Analysts!"
 done
+
+sudo groupadd students
+
+sudo cat > students.txt<< EOF
+Bill
+Anna
+Hector
+Maria
+EOF
+
+for name in $( cat students.txt ); do
+    sudo useradd -m $name
+    echo "User $name added successfully!"
+    echo $name:$name"123" | chpasswd
+    echo "Password for user $name changed successfully"
+done
+
+for name in $( cat students.txt ); do 
+  sudo usermod -a -G students "$name";
+  echo "User $name added successfully to the group titled Students!"
+done
