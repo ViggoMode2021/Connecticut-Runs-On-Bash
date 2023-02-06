@@ -33,11 +33,11 @@ install-bash-and-docker
 
 add-analysts () {
 
-  sudo cat > data-analysts.txt<< EOF
-  Larry
-  Lori
-  Bob
-  EOF
+sudo cat > data-analysts.txt<< EOF
+Larry
+Lori
+Bob
+EOF
 
   for name in $( cat data-analysts.txt ); do
       sudo useradd -m $name
@@ -63,12 +63,12 @@ add-teachers () {
 
   sudo groupadd teachers
 
-  sudo cat > teachers.txt<< EOF
-  Bill
-  Anna
-  Hector
-  Maria
-  EOF
+sudo cat > teachers.txt<< EOF
+Bill
+Anna
+Hector
+Maria
+EOF
 
   for name in $( cat teachers.txt ); do
       sudo useradd -m $name
