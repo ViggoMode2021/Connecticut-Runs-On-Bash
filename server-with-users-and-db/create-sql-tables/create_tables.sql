@@ -7,6 +7,9 @@ CREATE TABLE IF NOT EXISTS schools (
   PRIMARY KEY (school_id)
 );
 
+INSERT INTO schools (school_city, school_name, school_address)
+VALUES (');
+
 -- Creation of teachers table
 CREATE TABLE IF NOT EXISTS teachers (
   teacher_id SERIAL NOT NULL,
