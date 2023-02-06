@@ -59,31 +59,31 @@ add-analysts () {
 
 add-analysts
 
-add-students () {
+add-teachers () {
 
-  sudo groupadd students
+  sudo groupadd teachers
 
-  sudo cat > students.txt<< EOF
+  sudo cat > teachers.txt<< EOF
   Bill
   Anna
   Hector
   Maria
   EOF
 
-  for name in $( cat students.txt ); do
+  for name in $( cat teachers.txt ); do
       sudo useradd -m $name
       echo "User $name added successfully!"
       echo $name:$name"123" | chpasswd
       echo "Password for user $name changed successfully"
   done
 
-  for name in $( cat students.txt ); do 
-    sudo usermod -a -G students "$name";
-    echo "User $name added successfully to the group titled Students!"
+  for name in $( cat teachers.txt ); do 
+    sudo usermod -a -G teachers "$name";
+    echo "User $name added successfully to the group titled Teachers!"
   done
  
  }
  
- add-students
+ add-teachers
 
 # add more?
