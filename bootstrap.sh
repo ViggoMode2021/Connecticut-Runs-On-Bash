@@ -1,4 +1,6 @@
-  GNU nano 6.2                                                                               setup.sh                                                                                         
+#!/usr/bin/env bash
+
+GNU nano 6.2                                                                                                                                                                    
 # Alternatively you can use the official docker install script
 wget -qO- https://get.docker.com/ | sh
 
@@ -67,3 +69,18 @@ for name in $( cat students.txt ); do
   sudo usermod -a -G students "$name";
   echo "User $name added successfully to the group titled Students!"
 done
+
+sudo cat > sudoers.sh<< EOF
+#!/usr/bin/env bash
+while [[ -n $1 ]]; do
+    echo "$1    ALL=(ALL:ALL) ALL" >> /etc/sudoers;
+    shift # shift all parameters;
+done
+EOF
+
+sudo ./sudoers.sh Larry Lori Bob
+
+Sleep 5 
+
+sudo rm sudoers.sh
+
