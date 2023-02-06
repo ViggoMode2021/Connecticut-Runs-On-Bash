@@ -85,5 +85,3 @@ add-teachers () {
  }
  
  add-teachers
-
-# add more?
