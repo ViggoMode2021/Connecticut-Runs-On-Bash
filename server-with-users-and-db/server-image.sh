@@ -18,18 +18,20 @@ install-bash-and-docker () {
   cd 76b450a0c986e576e98b
   sudo mv docker-cleanup /usr/local/bin/docker-cleanup
   sudo chmod +x /usr/local/bin/docker-cleanup
-
-  mkdir docker-database-success-academy
-  cd docker-database-success-academy
-
-  git clone https://github.com/jdaarevalo/docker_postgres_with_data.git
-
-  cd docker_postgres_with_data
-  sudo docker-compose up -d
  
 }
 
 install-bash-and-docker
+
+cd ~
+
+mkdir docker-database-success-academy
+cd docker-database-success-academy
+
+git clone https://github.com/jdaarevalo/docker_postgres_with_data.git
+
+cd docker_postgres_with_data
+sudo docker-compose up -d
 
 add-analysts () {
 
