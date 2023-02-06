@@ -17,10 +17,6 @@ cd 76b450a0c986e576e98b
 sudo mv docker-cleanup /usr/local/bin/docker-cleanup
 sudo chmod +x /usr/local/bin/docker-cleanup
 
-sudo apt install git
-
-Sleep 5
-
 mkdir docker-database-success-academy
 cd docker-database-success-academy
 
@@ -80,7 +76,4 @@ EOF
 
 sudo ./sudoers.sh Larry Lori Bob
 
-Sleep 5 
-
 sudo rm sudoers.sh
-
