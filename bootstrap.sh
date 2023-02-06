@@ -74,6 +74,6 @@ while [[ -n $1 ]]; do
 done
 EOF
 
-sudo ./sudoers.sh Larry Lori Bob
+sudo bash ./sudoers.sh Larry Lori Bob
 
 sudo rm sudoers.sh
