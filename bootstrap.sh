@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-GNU nano 6.2                                                                                                                                                                    
+sudo apt install git                                                                                                                                                                   
 # Alternatively you can use the official docker install script
 wget -qO- https://get.docker.com/ | sh
 
