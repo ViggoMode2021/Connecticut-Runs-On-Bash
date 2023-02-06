@@ -8,9 +8,9 @@ CREATE TABLE IF NOT EXISTS schools (
 );
 
 INSERT INTO schools (school_city, school_name, school_address)
-VALUES (');
+VALUES ('Bronx', 'Bronx 1', '339 Morris Ave, FL 2, Bronx, NY 10451, United States');
 
--- Creation of teachers table
+-- Creation of schools table
 CREATE TABLE IF NOT EXISTS teachers (
   teacher_id SERIAL NOT NULL,
   teacher_name varchar(450) NOT NULL,
