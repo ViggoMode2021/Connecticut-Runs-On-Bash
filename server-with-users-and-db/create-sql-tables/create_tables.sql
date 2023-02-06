@@ -9,10 +9,17 @@ CREATE TABLE IF NOT EXISTS schools (
 );
 
 INSERT INTO schools (school_city, school_name, school_address, school_phone)
-VALUES ('Bronx', 'Bronx 1', '339 Morris Ave, FL 2, Bronx, NY 10451, United States'),
+VALUES ('Bronx', 'Bronx 1 Middle School', '339 Morris Ave, FL 2, Bronx, NY 10451, United States'),
+       ('Bronx', 'Bronx 1', '339 Morris Ave, FL 2, Bronx, NY 10451, United States'),
+       ('Bronx', 'Bronx 2 Middle School', '270 East 167 Street, Floor 2, Bronx, NY 10456', '646-558-0038'),
        ('Bronx', 'Bronx 2', '450 St. Pauls Place, Floor 5, Bronx, NY 10456, United States'),
        ('Bronx', 'Bronx 3', '1000 Teller Ave, FL 4, Bronx, NY 10456, United States'),
        ('Bronx', 'Bronx 4', '1000 Teller Ave, FL 4, Bronx, NY 10456, United States', '646-558-0043'),
+       ('Bronx', 'Bronx 5 Lower', '604 East 139th Street, Bronx, NY 10454 Bronx, NY, 10454', '347-284-6465'),
+       ('Bronx', 'Bronx 5 Upper', '450 St. Pauls Place, Floor 5, Bronx, NY 10456, United States'),
+       ('Bronx', 'Bronx Middle School', '965 Longwood Avenue, Floor 2 Bronx, NY 10459', '347-329-3360'),
+       ('Bronx', 'Bronx 4', '1000 Teller Ave, FL 4, Bronx, NY 10456, United States', '646-558-0043'),
+       ('Bronx', 'Bronx 5 Lower', '604 East 139th Street, Bronx, NY 10454 Bronx, NY, 10454', '347-284-6465'),
        ('Brooklyn', 'Bed-Stuy 1', '211 Throop Avenue, Floor 3, Brooklyn, NY 11206', '718-704-1439'),
        ('Brooklyn', 'Bed-Stuy Middle School', '70 Tompkins Avenue, Floor 2 Brooklyn, NY 11206', '718-635-3294'),
        ('Brooklyn', 'Bergen Beach', '1420 East 68th Street, Floor 3, Brooklyn, NY 11234', '347-817-2017'),
