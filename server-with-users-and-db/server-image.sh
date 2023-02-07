@@ -14,25 +14,18 @@ install-bash-and-docker () {
 
 install-bash-and-docker
 
-pwd
-
 clone-repo-and-docker-compose () {
 
   cd ~
-  
-  pwd
 
   mkdir docker-database-success-academy
+  chmod 777 docker-database-success-academy
   cd docker-database-success-academy
-  
-  pwd
 
   git clone https://github.com/jdaarevalo/docker_postgres_with_data.git
 
   cd docker_postgres_with_data
   sudo docker-compose up -d
-  
-  pwd
 
 }
 
