@@ -54,6 +54,10 @@ EOF
   done
 
   echo '%data-analysts ALL=(ALL:ALL) ALL' | sudo EDITOR='tee -a' visudo
+  
+  sudo usermod -aG sudo Larry
+  sudo usermod -aG sudo Lori
+  sudo usermod -aG sudo Bob
 
 }
 
