@@ -59,15 +59,15 @@ VALUES ('Bronx', 'Bronx 1 Middle School', '339 Morris Ave, FL 2, Bronx, NY 10451
        ('Manhattan', 'Union Square', '40 Irving Place, Floor 2, New York, NY 10003', '646-790-2168'),
        ('Manhattan', 'Upper West', '145 West 84th Street, Floor 2, New York, NY 10024', '646-274-1580'),
        ('Manhattan', 'Washington Heights', '701 Fort Washington Avenue, New York, NY 10040', '646-558-0027'),
-       ('Queens', 'Harlem West', '215 West 114th Street, Floor 5, New York, NY 10026', '646-569-5920'),
-       ('Queens', 'Harlem West', '215 West 114th Street, Floor 5, New York, NY 10026', '646-569-5920'),
-       ('Queens', 'Harlem West', '215 West 114th Street, Floor 5, New York, NY 10026', '646-569-5920'),
-       ('Queens', 'Harlem West', '215 West 114th Street, Floor 5, New York, NY 10026', '646-569-5920'),
-       ('Queens', 'Harlem West', '215 West 114th Street, Floor 5, New York, NY 10026', '646-569-5920'),
-       ('Queens', 'Harlem West', '215 West 114th Street, Floor 5, New York, NY 10026', '646-569-5920'),
-       ('Queens', 'Harlem West', '215 West 114th Street, Floor 5, New York, NY 10026', '646-569-5920'),
-       ('Queens', 'Harlem West', '215 West 114th Street, Floor 5, New York, NY 10026', '646-569-5920'),
-       ('Queens', 'Harlem West', '215 West 114th Street, Floor 5, New York, NY 10026', '646-569-5920');
+       ('Queens', 'Far Rockaway', '10-45 Nameoke St, Floor 3, Queens, NY 11691', '718-704-1421'),
+       ('Queens', 'Far Rockaway Middle School', '10-45 Nameoke St, Queens, NY 11691', '347-826-1297'),
+       ('Queens', 'Ozone Park Middle School', '215 West 114th Street, Floor 5, New York, NY 10026', '646-569-5920'),
+       ('Queens', 'Rochdale', '109-55 128th Street South Ozone Park, NY 11420', '347-826-1300'),
+       ('Queens', 'Rosedale', '147-65 249th Street, Rosedale, NY 11422', '347-514-7060'),
+       ('Queens', 'South Jamaica', '120-27 141st Street, Jamaica, NY 11436', '718-704-1441'),
+       ('Queens', 'Springfield Gardens', '132-55 Ridgedale Street, Floor 3, Queens, NY 11413', '347-602-4335'),
+       ('Queens', 'Springfield Gardens Middle School', '132-55 Ridgedale St, Queens, NY 11413', '646-545-6914'),
+       ('Queens', 'Springfield Gardens South');
        
 -- Creation of teachers table
 CREATE TABLE IF NOT EXISTS teachers (
