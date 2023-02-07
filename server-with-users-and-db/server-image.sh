@@ -22,7 +22,7 @@ clone-repo-and-docker-compose () {
   chmod 777 docker-database-success-academy
   cd docker-database-success-academy
 
-  git clone https://github.com/jdaarevalo/docker_postgres_with_data.git
+  git clone https://github.com/ViggoMode2021/docker-compose-postgres-sa.git
 
   cd docker_postgres_with_data
   sudo docker-compose up -d
