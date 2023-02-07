@@ -14,15 +14,21 @@ install-bash-and-docker () {
 
 install-bash-and-docker
 
-cd ~
+clone-repo-and-docker-compose () {
 
-mkdir docker-database-success-academy
-cd docker-database-success-academy
+  cd ~
 
-git clone https://github.com/jdaarevalo/docker_postgres_with_data.git
+  mkdir docker-database-success-academy
+  cd docker-database-success-academy
 
-cd docker_postgres_with_data
-sudo docker-compose up -d
+  git clone https://github.com/jdaarevalo/docker_postgres_with_data.git
+
+  cd docker_postgres_with_data
+  sudo docker-compose up -d
+
+}
+
+clone-repo-and-docker-compose
 
 add-analysts () {
 
