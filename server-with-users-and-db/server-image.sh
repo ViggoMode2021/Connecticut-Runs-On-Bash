@@ -24,7 +24,7 @@ clone-repo-and-docker-compose () {
 
   git clone https://github.com/ViggoMode2021/docker-compose-postgres-sa.git
 
-  cd docker_postgres_with_data
+  cd docker-compose-postgres-sa
   sudo docker-compose up -d
 
 }
