@@ -1,0 +1,3 @@
+Echo passwords for new users
+Add users to visudo 
+Touch csv files
