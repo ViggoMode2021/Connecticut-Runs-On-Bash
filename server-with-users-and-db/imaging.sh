@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-install-bash-and-docker () {
+install-git-and-docker () {
 
   sudo apt install git                                                                                                                                                                   
   # Alternatively you can use the official docker install script
