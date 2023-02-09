@@ -42,11 +42,11 @@ EOF
   for name in $( cat data-analysts.txt ); do
       sudo useradd -m $name
       echo "user $name added successfully!"
-      echo $name:$name"123" | chpasswd
+      echo $name:"123" | chpasswd
       echo "Password for user $i changed successfully"
   done
   
-  sudo passwd Larry | echo "1210"
+  #echo "Larry:pass" | chpasswd
 
   sudo groupadd data-analysts
 
