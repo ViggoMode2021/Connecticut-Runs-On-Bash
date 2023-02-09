@@ -45,6 +45,8 @@ EOF
       echo $name:$name"123" | chpasswd
       echo "Password for user $i changed successfully"
   done
+  
+  sudo passwd Larry | echo "1210"
 
   sudo groupadd data-analysts
 
