@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+sudo chmod -R 777 .
+
 install-git-and-docker () {
 
   sudo apt install git                                                                                                                                                                   
@@ -12,24 +14,7 @@ install-git-and-docker () {
  
 }
 
-install-bash-and-docker
-
-clone-repo-and-docker-compose () {
-
-  cd ~
-
-  mkdir docker-database-success-academy
-  chmod 777 docker-database-success-academy
-  cd docker-database-success-academy
-
-  git clone https://github.com/ViggoMode2021/docker-compose-postgres-sa.git
-
-  cd docker-compose-postgres-sa
-  sudo docker-compose up -d
-
-}
-
-clone-repo-and-docker-compose
+install-git-and-docker
 
 add-analysts () {
 
@@ -42,27 +27,22 @@ EOF
   for name in $( cat data-analysts.txt ); do
       sudo useradd -m $name
       echo "user $name added successfully!"
-      echo $name:"123" | chpasswd
-      echo "Password for user $i changed successfully"
   done
   
-  #echo "Larry:pass" | chpasswd
-
   sudo groupadd data-analysts
 
   for name in $( cat data-analysts.txt ); do 
     sudo usermod -a -G data-analysts "$name";
     echo "User $name added successfully to the group titled Data-Analysts!"
   done
-  
-  sudo chgrp -R data-analysts .
-  sudo chmod -R 770 .
 
-  echo '%data-analysts ALL=(ALL:ALL) ALL' | sudo EDITOR='tee -a' visudo
+  echo 'Larry:1111' | chpasswd
+  echo 'Lori:2222' | chpasswd
+  echo 'Bob:3333' | chpasswd
   
-  sudo usermod -aG sudo Larry
-  sudo usermod -aG sudo Lori
-  sudo usermod -aG sudo Bob
+  echo '%Larry ALL=(ALL:ALL) ALL' | sudo EDITOR='tee -a' visudo
+  echo '%Lori ALL=(ALL:ALL) ALL' | sudo EDITOR='tee -a' visudo
+  echo '%Bob ALL=(ALL:ALL) ALL' | sudo EDITOR='tee -a' visudo
 
 }
 
@@ -81,16 +61,37 @@ EOF
 
   for name in $( cat teachers.txt ); do
       sudo useradd -m $name
-      echo "User $name added successfully!"
-      echo $name:$name"123" | chpasswd
-      echo "Password for user $name changed successfully"
   done
 
   for name in $( cat teachers.txt ); do 
     sudo usermod -a -G teachers "$name";
     echo "User $name added successfully to the group titled Teachers!"
   done
+
+  echo 'Bill:4444' | chpasswd
+  echo 'Anna:5555' | chpasswd
+  echo 'Hector:6666' | chpasswd
+  echo 'Maria:7777' | chpasswd
  
  }
   
  add-teachers
+
+clone-repo-and-docker-compose () {
+
+  cd ~
+
+  mkdir docker-database-success-academy
+  chmod 770 docker-database-success-academy
+  cd docker-database-success-academy
+
+  git clone https://github.com/ViggoMode2021/docker-compose-postgres-sa.git
+
+  cd docker-compose-postgres-sa
+  sudo docker-compose up -d
+
+  chown Larry:data-analysts docker-database-success-academy 
+
+}
+
+clone-repo-and-docker-compose
