@@ -90,8 +90,6 @@ clone-repo-and-docker-compose () {
   cd docker-compose-postgres-sa
   sudo docker-compose up -d
 
-  chown Larry:data-analysts docker-database-success-academy 
-
 }
 
 clone-repo-and-docker-compose
