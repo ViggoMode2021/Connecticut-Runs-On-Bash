@@ -93,3 +93,6 @@ clone-repo-and-docker-compose () {
 }
 
 clone-repo-and-docker-compose
+
+#docker exec -it <CONTAINER_ID> /bin/bash
+#psql -U postgres
