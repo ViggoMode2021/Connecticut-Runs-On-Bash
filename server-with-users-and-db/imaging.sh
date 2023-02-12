@@ -35,6 +35,11 @@ EOF
     sudo usermod -a -G data-analysts "$name";
     echo "User $name added successfully to the group titled Data-Analysts!"
   done
+  
+  for name in $( cat data-analysts.txt ); do 
+    sudo chsh -s /usr/local/bin/bash
+    echo "User $name shell changed to Bash!"
+  done
 
   echo 'Larry:1111' | chpasswd
   echo 'Lori:2222' | chpasswd
