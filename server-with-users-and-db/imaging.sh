@@ -106,3 +106,12 @@ clone-repo-and-docker-compose
 
 #docker exec -it <CONTAINER_ID> /bin/bash
 #psql -U postgres
+
+sudo cat > send-table-to-csv.sh<< EOF
+now=$(date +"%m-%d-%Y")
+CONTAINER="docker-compose-postgres-sa_postgres_1"
+DB="postgres"
+TABLE="schools"
+FILE="database-backups-${now}.csv"
+sudo docker exec -u postgres ${CONTAINER} psql -d ${DB} -c "COPY ${TABLE} TO STDOUT WITH CSV HEADER " > ${FILE}
+EOF
