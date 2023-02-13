@@ -14,6 +14,11 @@ install-git-and-docker () {
  
 }
 
+sudo cat > connect-to-container.txt<< EOF
+docker exec -it <CONTAINER_ID> /bin/bash
+psql -U postgres
+EOF
+
 install-git-and-docker
 
 add-analysts () {
