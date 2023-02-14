@@ -116,8 +116,6 @@ DB="postgres"
 TABLE="schools"
 FILE="database-backups-${now}.csv"
 
-sudo su AWS
-
 sudo docker exec -u postgres ${CONTAINER} psql -d ${DB} -c "COPY ${TABLE} TO STDOUT WITH CSV HEADER " > ${FILE}
 
 mkdir db-backups
