@@ -124,11 +124,11 @@ mkdir db-backups
 
 mv ${FILE} db-backups
 
-sudo tar -zcf /usr/local/bin/$(date +%Y%m%d).tar.gz -C /home/aws/db-backups #edit this
+sudo tar -zcf /home/aws/db-backup$(date + %m%d%Y).tar.gz -C /home/aws/db-backups #edit this
 
-aws s3api put-object --bucket vig-script-backups --key script-backup-$(date +%Y%m%d).tar.gz --body /usr/local/bin/$(date +%Y%m%d).tar.gz
+aws s3api put-object --bucket vig-script-backups --key /home/aws/db-backups$(date +%Y%m%d).tar.gz --body /home/aws/db-backups$(date +%Y%m%d).tar.gz #edit s3 bucket 
 
-# Crontab syntax: 0 0 */10 * * /usr/bin/env bash ./backup-to-aws >/dev/null 2>&1
+# Crontab syntax: 0 0 */10 * * /usr/bin/env bash ./send-table-to-csv >/dev/null 2>&1
 
 EOF
 
