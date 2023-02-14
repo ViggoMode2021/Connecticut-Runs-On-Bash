@@ -108,25 +108,27 @@ clone-repo-and-docker-compose
 #psql -U postgres
 
 sudo cat > send-table-to-csv.sh<< EOF
+#!/usr/bin/env bash
+
 now=$(date +"%m-%d-%Y")
 CONTAINER="docker-compose-postgres-sa_postgres_1"
 DB="postgres"
 TABLE="schools"
 FILE="database-backups-${now}.csv"
+
 sudo docker exec -u postgres ${CONTAINER} psql -d ${DB} -c "COPY ${TABLE} TO STDOUT WITH CSV HEADER " > ${FILE}
-EOF
 
-yes | sudo apt-get install awscli
+mkdir db-backups
 
-sudo cat > backup-db-to-cli<< EOF
-#!/usr/bin/env bash
+mv ${FILE} db-backups
 
-# Remember to configure AWS CLI
-
-sudo tar -zcf /usr/local/bin/$(date +%Y%m%d).tar.gz -C /usr/local/ bin
+sudo tar -zcf /usr/local/bin/$(date +%Y%m%d).tar.gz -C /home/aws/db-backups #edit this
 
 aws s3api put-object --bucket vig-script-backups --key script-backup-$(date +%Y%m%d).tar.gz --body /usr/local/bin/$(date +%Y%m%d).tar.gz
 
 # Crontab syntax: 0 0 */10 * * /usr/bin/env bash ./backup-to-aws >/dev/null 2>&1
 
 EOF
+
+# Remember to configure AWS CLI
+yes | sudo apt-get install awscli
