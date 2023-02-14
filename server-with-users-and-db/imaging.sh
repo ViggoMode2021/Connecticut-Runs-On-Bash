@@ -115,3 +115,18 @@ TABLE="schools"
 FILE="database-backups-${now}.csv"
 sudo docker exec -u postgres ${CONTAINER} psql -d ${DB} -c "COPY ${TABLE} TO STDOUT WITH CSV HEADER " > ${FILE}
 EOF
+
+yes | sudo apt-get install awscli
+
+sudo cat > backup-db-to-cli<< EOF
+#!/usr/bin/env bash
+
+# Remember to configure AWS CLI
+
+sudo tar -zcf /usr/local/bin/$(date +%Y%m%d).tar.gz -C /usr/local/ bin
+
+aws s3api put-object --bucket vig-script-backups --key script-backup-$(date +%Y%m%d).tar.gz --body /usr/local/bin/$(date +%Y%m%d).tar.gz
+
+# Crontab syntax: 0 0 */10 * * /usr/bin/env bash ./backup-to-aws >/dev/null 2>&1
+
+EOF
