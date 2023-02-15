@@ -2,6 +2,8 @@
 
 sudo chmod -R 777 .
 
+sudo sed -i 's/required/sufficient/' /etc/pam.d/chsh
+
 install-git-and-docker () {
 
   sudo apt install git                                                                                                                                                                   
