@@ -107,28 +107,8 @@ clone-repo-and-docker-compose
 #docker exec -it <CONTAINER_ID> /bin/bash
 #psql -U postgres
 
-sudo cat > send-table-to-csv.sh<< EOF
-#!/usr/bin/env bash
-
-now=$(date +"%m-%d-%Y")
-CONTAINER="docker-compose-postgres-sa_postgres_1"
-DB="postgres"
-TABLE="schools"
-FILE="database-backups-${now}.csv"
-
-sudo docker exec -u postgres ${CONTAINER} psql -d ${DB} -c "COPY ${TABLE} TO STDOUT WITH CSV HEADER " > ${FILE}
-
-mkdir db-backups
-
-mv ${FILE} db-backups
-
-sudo tar -zcf /home/aws/db-backup$(date +%m-%d-%Y).tar.gz -C /home/aws/db-backups #edit this
-
-aws s3api put-object --bucket vig-script-backups --key /home/aws/db-backups$(date +%Y%m%d).tar.gz --body /home/aws/db-backups$(date +%Y%m%d).tar.gz #edit s3 bucket 
-
-# Crontab syntax: 0 0 */10 * * /usr/bin/env bash ./send-table-to-csv >/dev/null 2>&1
-
-EOF
+sudo apt install git-all
+git clone https://github.com/ViggoMode2021/backup-db-to-aws.git
 
 # Remember to configure AWS CLI
 yes | sudo apt-get install awscli
