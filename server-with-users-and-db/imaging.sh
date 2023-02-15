@@ -42,7 +42,7 @@ EOF
   done
   
   for name in $( cat data-analysts.txt ); do 
-    sudo chsh -s /usr/local/bin/bash
+    sudo chsh -s /bin/bash
     echo "User $name shell changed to Bash!"
   done
 
@@ -106,8 +106,6 @@ clone-repo-and-docker-compose
 
 #docker exec -it <CONTAINER_ID> /bin/bash
 #psql -U postgres
-
-sudo apt install git-all
 git clone https://github.com/ViggoMode2021/backup-db-to-aws.git
 
 # Remember to configure AWS CLI
